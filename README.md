@@ -1,2 +1,4 @@
 # BDS-G3
 BootCamp Data Science G3
+### PRIMEROS PASOS 
+### ALUMNA:  ROSITA TORRES 
