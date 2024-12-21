@@ -6,10 +6,12 @@ while True:
     opcion = input("Ingrese el número de la opción: ")
 
     if opcion == '1':
+        print("Convirtiendo de Soles a Dólares...")
         soles = float(input("Ingrese la cantidad en Soles: "))
         dolares = soles / tipo_cambio
         print(f"{soles} Soles son {dolares:.2f} Dólares")
     elif opcion == '2':
+        print("Convirtiendo de Dólares a Soles...")
         dolares = float(input("Ingrese la cantidad en Dólares: "))
         soles = dolares * tipo_cambio
         print(f"{dolares} Dólares son {soles:.2f} Soles")
