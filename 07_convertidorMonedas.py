@@ -1,5 +1,8 @@
-while True:
-    tipo_cambio = 3.8
+TIPO_CAMBIO_COMPRA = 3.8
+TIPO_CAMBIO_VENTA = 3.65
+bandera = True
+
+while (bandera): 
     print("Seleccione la operación que desea realizar:")
     print("1. Convertir de Soles a Dólares")
     print("2. Convertir de Dólares a Soles")
@@ -7,15 +10,15 @@ while True:
 
     if opcion == '1':
         soles = float(input("Ingrese la cantidad en Soles: "))
-        dolares = soles / tipo_cambio
+        dolares = soles / TIPO_CAMBIO_COMPRA
         print(f"{soles} Soles son {dolares:.2f} Dólares")
     elif opcion == '2':
         dolares = float(input("Ingrese la cantidad en Dólares: "))
-        soles = dolares * tipo_cambio
+        soles = dolares * TIPO_CAMBIO_VENTA
         print(f"{dolares} Dólares son {soles:.2f} Soles")
     else:
         print("Opción no válida. Intente nuevamente.")
-
+        continue
     salir = input("¿Desea realizar otra operación? (si/no): ").lower()
     if salir == 'no':
         print("Gracias por usar el Programa de Tipo de cambio!")
