@@ -3,14 +3,14 @@ from time import sleep
 from matriculas.lib_alumnos import *
 
 
-dic_alumnos= leer_archivo('alumnos.txt')
+dic_alumnos= leer_archivo('MODULO01/alumnos.txt')
 
 while opcion < 5:
     os.system('clear')
     opcion = menu()
     
     if opcion == 1:
-         registrar(dic_alumnos,'alumnos.txt')
+         registrar(dic_alumnos,'MODULO01/alumnos.txt')
     
     elif opcion == 2:   
         mostrar(dic_alumnos)

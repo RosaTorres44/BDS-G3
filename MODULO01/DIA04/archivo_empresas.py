@@ -11,7 +11,7 @@ def cargar_empresas(nombre_archivo):
     return empresas
 
 
-empresas = cargar_empresas('archivo_empresas.txt')
+empresas = cargar_empresas('MODULO01/archivo_empresas.txt')
 print(empresas)
 
 
