@@ -1,7 +1,11 @@
 import os
 
-ANCHO = 50
+ANCHO = 50 
 opcion = 0 
+
+
+dic_alumnos = {}
+
 
 def mostrar_mensaje(mensaje):
     print('-' * ANCHO)
@@ -19,9 +23,10 @@ def menu():
 
     opcion = int(input("Seleccione una opción: "))
     os.system('clear')
+    return opcion
 
 
-def registrar(dic_alumnos):
+def registrar(dic_alumnos, file_name):
         mostrar_mensaje("1. Registrar alumno") 
 
         dni = input("Ingrese DNI: ")
@@ -33,6 +38,9 @@ def registrar(dic_alumnos):
             'email': email}
         }
         dic_alumnos.update(dic_nuevo_alumno)
+
+        with open(file_name, 'a') as file:
+                file.write(f"{dni},{nombre},{email}\n")
 
         return dic_nuevo_alumno
 
@@ -74,3 +82,18 @@ def eliminar(dic_alumnos):
 
 def salir():
         mostrar_mensaje("5. Salir") 
+        
+#traer datos del archivo
+def leer_archivo(file_name):
+    file = open(file_name, 'r')
+    str_alumnos = file.read()
+    lista_alumnos = str_alumnos.splitlines()
+    file.close()
+    for str_fila in lista_alumnos:
+            lista_fila = str_fila.split(',')
+            dic_fila = {'nombre': lista_fila[1], 'email': lista_fila[2]}
+
+            dic_nuevo_alumno = { lista_fila[0]: dic_fila } 
+            dic_alumnos.update(dic_nuevo_alumno)
+    
+    return dic_alumnos

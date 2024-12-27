@@ -2,20 +2,15 @@ import os
 from time import sleep
 from matriculas.lib_alumnos import *
 
-dic_alumnos = {
-    '123456': {
-        'nombre': 'Juan',
-        'email': 'cesar@gmail.com' 
-    },
-}
+
+dic_alumnos= leer_archivo('alumnos.txt')
 
 while opcion < 5:
     os.system('clear')
-    menu()
-    opcion = int(input("Seleccione una opción: "))
-    os.system('clear')
+    opcion = menu()
+    
     if opcion == 1:
-         registrar(dic_alumnos)
+         registrar(dic_alumnos,'alumnos.txt')
     
     elif opcion == 2:   
         mostrar(dic_alumnos)
@@ -29,7 +24,7 @@ while opcion < 5:
     elif opcion == 5:   
         salir()
     else :
-        mostrar_mensaje("Opción incorrecta")  
+        print("Opción incorrecta")  
 
     sleep(1)
 
