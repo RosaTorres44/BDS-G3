@@ -1,5 +1,7 @@
 import os
 from tabulate import tabulate
+from colorama import Fore, Back, Style  
+
 
 ANCHO = 50 
 opcion = 0 
@@ -46,16 +48,11 @@ def registrar(dic_alumnos, file_name):
         return dic_nuevo_alumno
 
 def mostrar(dic_alumnos):
-        mostrar_mensaje("2. Mostrar alumno")
+    mostrar_mensaje("2. Mostrar alumno")
 
-        for i, (dni, datos) in enumerate(dic_alumnos.items(), start=1):
-            data = []
-            for dni, datos in dic_alumnos.items():
-                   alumno_fila = [dni, datos['nombre'], datos['email']]
-                   data.append(alumno_fila)
-        print(tabulate(data, headers=['DNI', 'Nombre', 'Email'], tablefmt=estilo))
-        input("Presione Enter para continuar...")
-
+    data = [[Fore.GREEN + dni , Fore.GREEN + datos['nombre'] , Fore.GREEN + datos['email'] + Style.RESET_ALL] for dni, datos in dic_alumnos.items()]
+    print(tabulate(data, headers=[Fore.GREEN + 'DNI', Fore.GREEN + 'Nombre' , Fore.GREEN + 'Email' + Style.RESET_ALL], tablefmt=estilo))
+    input("Presione Enter para continuar...")
 
 def modificar(dic_alumnos):
         mostrar_mensaje("3. Actualizar alumno")
