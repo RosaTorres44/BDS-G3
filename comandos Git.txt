@@ -1,0 +1,52 @@
+git config --list
+
+1. Inicia un repositorio en tu carpeta local
+
+git init
+
+2. Conecta el repositorio local con el remoto
+git remote add origin https://github.com/RosaTorres44/BDS-G3.git
+
+Actualizar el remoto existente 
+git remote set-url origin https://github.com/RosaTorres44/BDS-G3.git
+
+
+3. Eliminar el Remoto Anterior y Agregar el Nuevo
+
+
+git remote remove origin
+git remote add origin https://github.com/RosaTorres44/BDS-G3.git
+
+
+#agregar cambios al stagig area
+git add . 
+
+
+#guardar cambios en repo local de Git
+git commit -m "comentarios" 
+
+
+#ver historial de cambios
+git log
+
+#para subir los cambios a Github
+#consideraar que va a solicitar el ingreso a Github 
+git push origin NombreRama
+
+ir a settings 
+developer settings
+personal access tokens 
+
+
+git push origin NombreRama
+
+
+Forzarlo 
+git push origin main —force
+
+git clone https://github.com/RosaTorres44/BDS-G3.git 
+
+CREAR UNA RAMA NUEVA
+git fetch origin
+git checkout -b modulo02 origin/modulo02
+git branch
