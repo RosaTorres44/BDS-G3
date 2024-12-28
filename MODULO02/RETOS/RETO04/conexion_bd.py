@@ -5,7 +5,7 @@ def conectar_bd():
         connection = mysql.connector.connect(
             host="rtgmysql.mysql.database.azure.com",
             user="rtg_admin",
-            password="mukkam-cyzVi4-vixdij",
+            password="",
             database="datag3"
         )
         print(f'Estas conectado a la base de datos: {connection.database}')
