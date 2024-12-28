@@ -16,7 +16,7 @@ class Bolita(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
         #cargar la imagen
-        self.image = pygame.image.load("MODULO02/GAME/imagenes/bolita.png")
+        self.image = pygame.image.load("MODULO02/GAME/assets/imagenes/bolita.png")
         
         #obtener el rectangulo de la imagen
         self.rect = self.image.get_rect()
@@ -42,7 +42,7 @@ class Bolita(pygame.sprite.Sprite):
 class Paleta(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load("MODULO02/GAME/imagenes/paleta.png")
+        self.image = pygame.image.load("MODULO02/GAME/assets/imagenes/paleta.png")
         self.rect = self.image.get_rect()
         self.rect.midbottom = (ANCHO /2 , ALTO - 20 )
         self.speed = [0, 0]
@@ -61,7 +61,7 @@ class Paleta(pygame.sprite.Sprite):
 class Ladrillo(pygame.sprite.Sprite):
     def __init__(self,posicion):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load("MODULO02/GAME/imagenes/ladrillo.png")
+        self.image = pygame.image.load("MODULO02/GAME/assets/imagenes/ladrillo.png")
         self.rect = self.image.get_rect()
         self.rect.topleft = posicion
         
@@ -121,9 +121,9 @@ mensajes = MensajesJuego()
 puntos = 0
 
 #cargar sonidos
-sonido_colision_paleta = pygame.mixer.Sound("MODULO02/GAME/sonidos/colision.ogg")
-sonido_colision_muro = pygame.mixer.Sound("MODULO02/GAME/sonidos/colision_muro.ogg")
-sonido_game_over = pygame.mixer.Sound("MODULO02/GAME/sonidos/game_over.ogg")
+sonido_colision_paleta = pygame.mixer.Sound("MODULO02/GAME/assets/sonidos/colision.ogg")
+sonido_colision_muro = pygame.mixer.Sound("MODULO02/GAME/assets/sonidos/colision_muro.ogg")
+sonido_game_over = pygame.mixer.Sound("MODULO02/GAME/assets/sonidos/game_over.ogg")
 
 while True:
     reloj.tick(60)
