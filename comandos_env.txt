@@ -1,17 +1,19 @@
 #paso 1 crear entrono 
-python3 -m venv nombre_del_entorno
+python3 -m venv venv
 
 #paso 2 activar entrono en mac
-source nombre_del_entorno/bin/activate
+source venv/bin/activate
 
 #paso 3 validar freeze pip
 pip freeze
 
 #instalar requerimientos
-pip3 install -r MODULO02/requirements.txt --break-system-packages
+pip3 install -r requirements.txt --break-system-packages
 
 #paso 4
 deactivate
+
+rm -rf venv
 
 
 pip3 install nombre_del_paquete
