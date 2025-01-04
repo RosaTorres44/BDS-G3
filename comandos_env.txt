@@ -17,3 +17,6 @@ rm -rf venv
 
 
 pip3 install nombre_del_paquete
+
+
+venv/
