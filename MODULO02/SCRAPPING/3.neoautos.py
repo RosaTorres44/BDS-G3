@@ -13,16 +13,20 @@ response = requests.get(url,headers=fake_headers)
 
 if response.status_code == 200:
     soup = BeautifulSoup(response.text, 'html.parser')
+    #print (soup.prettify)
     autos = []
     div_autos = soup.find_all('article', class_='c-results c-results-used--premium')
     
     for autos in div_autos:
-        nombre = autos.find('h2', class_='c-results__header-title').get_text(strip=True)
+        nombre = autos.find('h2', class_='c-results__header-title').get_text()
         link = autos.find('a', class_='c-results__link')['href']
+        precio = autos.find('div',class_='c-results-mount__price').get_text()
+
        
         
         print(f'Nombre: {nombre}')
         print(f'URL: {link}')
+        print(f'precio: {precio}')
         print('---')
 else:
     print(f'Error {response.status_code} {response.reason}')
