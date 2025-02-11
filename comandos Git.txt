@@ -48,5 +48,8 @@ git clone https://github.com/RosaTorres44/BDS-G3.git
 
 CREAR UNA RAMA NUEVA
 git fetch origin
-git checkout -b modulo02 origin/modulo02
+git checkout -b modulo04
+git push -u origin modulo04
+
+git checkout -b modulo04 origin/modulo04
 git branch
